@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import landingImg from '../../assets/images/landing.png';
 import studyIcon from '../../assets/images/icons/study.png';
@@ -9,6 +10,16 @@ import heartIcon from '../../assets/images/icons/heart.png';
 import styles from './styles';
 
 function LandingPage() {
+    const { navigate } = useNavigation();
+
+    function NavigateToGiveClasses() {
+        navigate('GiveClasses');
+    }
+
+    function NavigateToTeacherList() {
+        navigate('TeacherList');
+    }
+
     return (
         <View style={styles.container}>
             <Image source={landingImg} style={styles.banner} />
@@ -18,12 +29,12 @@ function LandingPage() {
             </Text>
 
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={[styles.buttons, styles.buttonPrimary]}>
+                <TouchableOpacity onPress={NavigateToTeacherList} style={[styles.buttons, styles.buttonPrimary]}>
                     <Image source={studyIcon} resizeMode='contain' />
                     <Text style={styles.buttonText} >Estudar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={[styles.buttons, styles.buttonSecondary]}>
+                <TouchableOpacity onPress={NavigateToGiveClasses} style={[styles.buttons, styles.buttonSecondary]}>
                     <Image source={giveClassesIcon} resizeMode='contain' />
                     <Text style={styles.buttonText} >Dar aulas</Text>
                 </TouchableOpacity>
