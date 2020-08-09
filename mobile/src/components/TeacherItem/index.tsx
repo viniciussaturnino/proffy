@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Image, Text, Linking } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import favIcon from '../../assets/images/icons/heart-outline.png';
 import unfavIcon from '../../assets/images/icons/unfavorite.png';
@@ -20,11 +21,39 @@ export interface Teacher {
 
 interface TeacherItemProps {
     teacher: Teacher;
+    favorited: boolean;
 }
 
-const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
+    const [favorite, setFavorite] = useState(favorited);
+    
     function linkToWpp() {
         Linking.openURL(`whatsapp://send?phone=${teacher.whatsapp}`);
+    }
+
+    async function toggleFavorite() {
+        const favorites = await AsyncStorage.getItem('favorites');
+
+        let favoritesArray = [];
+
+        if (favorites) {
+            favoritesArray = JSON.parse(favorites);
+        }
+
+        if (favorite) {
+            // Remover
+            const favoriteIndex = favoritesArray.findIndex((teacherItem: Teacher) => {
+                return teacherItem.id === teacher.id;
+            })
+
+            favoritesArray.splice(favoriteIndex, 1);
+            setFavorite(false);
+        } else {
+            // Adicionar
+            favoritesArray.push(teacher);
+            setFavorite(true);
+        }
+        await AsyncStorage.setItem('favorites', JSON.stringify(favoritesArray));
     }
 
     return (
@@ -49,9 +78,11 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
                 </Text>
 
                 <View style={styles.button}>
-                    <RectButton style={[styles.favoriteButton, styles.favorited]}>
-                        {/* <Image source={favIcon} /> */}
-                        <Image source={unfavIcon} />
+                    <RectButton
+                        onPress={toggleFavorite}
+                        style={[styles.favoriteButton, favorite ? styles.favorited : {} ]}
+                    >
+                        { favorite ? <Image source={unfavIcon} /> : <Image source={favIcon} /> }
                     </RectButton>
 
                     <RectButton onPress={linkToWpp} style={styles.contactButton}>
