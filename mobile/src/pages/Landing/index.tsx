@@ -17,8 +17,8 @@ function LandingPage() {
         navigate('GiveClasses');
     }
 
-    function NavigateToTeacherList() {
-        navigate('TeacherList');
+    function NavigateToStudy() {
+        navigate('Study');
     }
 
     return (
@@ -30,7 +30,7 @@ function LandingPage() {
             </Text>
 
             <View style={styles.buttonsContainer}>
-                <RectButton onPress={NavigateToTeacherList} style={[styles.buttons, styles.buttonPrimary]}>
+                <RectButton onPress={NavigateToStudy} style={[styles.buttons, styles.buttonPrimary]}>
                     <Image source={studyIcon} resizeMode='contain' />
                     <Text style={styles.buttonText} >Estudar</Text>
                 </RectButton>
