@@ -1,9 +1,9 @@
 import React from 'react';
 
 import wppIcon from '../../assets/images/icons/whatsapp.svg';
+import api from '../../services/api';
 
 import './styles.css';
-import api from '../../services/api';
 
 export interface Teacher {
     id: number;
