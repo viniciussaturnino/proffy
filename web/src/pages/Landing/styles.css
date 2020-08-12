@@ -1,3 +1,10 @@
+.total-container {
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
 #page-landing {
     width: 100vw;
     height: 100vh;
@@ -8,6 +15,36 @@
 
     color: var(--color-text-in-primary);
     background: var(--color-primary);
+}
+
+.nav-container {
+    display: grid;
+    width: 100vw;
+    height: 30rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #F0F0F7;
+    margin-top: 3.2rem;
+}
+
+.nav-container .text-nav {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.6rem;
+}
+
+.nav-container .text-nav h2 {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.nav-container .text-nav h3 {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .logo-container img {
@@ -31,7 +68,8 @@
 }
 
 .buttons-container {
-    display: flex;
+    /* display: flex; */
+    display: grid;
     justify-content: center;
     margin: 3.2rem 0;
 }
@@ -44,6 +82,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1.6rem;
 
     text-decoration: none;
     color: var(--color-button-text);
@@ -91,6 +130,10 @@
 }
 
 @media (min-width: 1100px) {
+    #page-landing {
+        height: 60vh;
+    }
+    
     #page-landing-content {
         max-width: 1100px;
 
@@ -100,6 +143,27 @@
         grid-template-areas:
             "logo hero hero"
             "buttons buttons total";
+    }
+
+    .nav-container {
+        width: 100vw;
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buttons-connection {
+        display: flex;
+        align-items: center;
+    }
+
+    .buttons-connection span {
+        margin-right: 3.2rem;
+    }
+
+    .text-nav {
+        margin-right: 10rem;
     }
 
     .logo-container {
@@ -126,6 +190,7 @@
     .buttons-container {
         grid-area: buttons;
         justify-content: flex-start;
+        display: flex;
     }
 
     .buttons-container a {
