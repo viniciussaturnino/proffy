@@ -37,7 +37,7 @@
     color: var(--color-text-in-primary);
 }
 
-.page-container button {
+.page-container a {
     width: 17.6rem;
     height: 5.6rem;
     background: var(--color-secundary);
@@ -54,6 +54,6 @@
     margin-top: 3.2rem;
 }
 
-.page-container button:hover {
+.page-container a:hover {
     background: var(--color-secundary-dark);
 }

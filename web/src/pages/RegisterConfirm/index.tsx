@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import checkIcon from '../../assets/images/icons/success-check-icon.svg';
 
@@ -12,7 +13,9 @@ function RegisterConfirm() {
                 <h1>Cadastro salvo!</h1>
             </div>
             <p>Tudo certo, seu cadastro está na nossa lista de professores. Agora é só ficar de olho no seu WhatsApp.</p>
-            <button>Acessar lista</button>
+            <Link to="/study">
+                Acessar lista
+            </Link>
         </div>
     );
 }

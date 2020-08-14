@@ -59,8 +59,8 @@ function TeacherForm() {
             cost: Number(cost),
             schedule: scheduleItems
         }).then(() => {
-            alert('Cadastro realizado com sucesso!');
-            history.push('/');
+            // alert('Cadastro realizado com sucesso!');
+            history.push('/register-confirmation');
         }).catch(() => {
             alert('Erro no cadastro, tente novamente!');
         })
