@@ -1,0 +1,59 @@
+.page-container {
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-primary);
+    background-image: url('../../assets/images/success-background.svg');
+    /* background-size: ; */
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-container .confirm-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container .confirm-content h1 {
+    font-family: Archivo;
+    font-weight: 700;
+    font-size: 54px;
+    color: #FFF;
+    line-height: 42px;
+    margin-top: 1.6rem;
+}
+
+.page-container p {
+    max-width: 500px;
+    text-align: center;
+    margin-top: 1.6rem;
+    margin-bottom: 80px;
+    font-family: Poppins;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--color-text-in-primary);
+}
+
+.page-container button {
+    width: 17.6rem;
+    height: 5.6rem;
+    background: var(--color-secundary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    margin-top: 3.2rem;
+}
+
+.page-container button:hover {
+    background: var(--color-secundary-dark);
+}
