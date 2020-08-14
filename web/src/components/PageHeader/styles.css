@@ -42,11 +42,37 @@
 }
 
 .page-header .header-content p {
-    max-width: 30rem;
+    max-width: 15rem;
     font-size: 1.6rem;
     line-height: 2.6rem;
     color: var(--color-text-in-primary);
+}
+
+.page-header .header-content p:first-child {
     margin-top: 2.4rem;
+}
+
+.page-header .header-content p:first-child {
+    max-width: 30rem;
+}
+
+.description {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.6rem;
+    align-items: center;
+}
+
+.message p {
+    margin-left: 1.6rem;
 }
 
 @media (min-width: 700px) {
