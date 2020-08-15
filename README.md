@@ -24,6 +24,7 @@ Aplicação web desenvolvida durante a Next Level Week #2 da Rocketseat. A aplic
 - ReactJS
 - Typescript
 - CSS/HTML
+- Banco de dados SQL
 - API Rest
 - Express
 
