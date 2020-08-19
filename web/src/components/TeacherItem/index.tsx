@@ -1,6 +1,6 @@
 import React from 'react';
 
-import wppIcon from '../../assets/images/icons/whatsapp.svg';
+import wppIcon from '../../assets/images/icons/wpp.svg';
 import api from '../../services/api';
 
 import './styles.css';
